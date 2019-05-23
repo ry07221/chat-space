@@ -34,28 +34,28 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-#### usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------| 
 |Name|string|index: true, null: false, unique: true|
 |Email|string|null: false|
 
-##### Association
+### Association
 - has_many :groups, through: :emmbers
 - has_many :members
 - has_many :messaes
 
-###### grouopsテーブル
+## grouopsテーブル
 |Column|Type|Options|
 |------|----|-------| 
 |name|string|
 
-####### Association
+### Association
 - has_many :members
 - has many :users, through: :members
 - has_many :messages
 
-######## messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------| 
 |text|string|
@@ -63,6 +63,6 @@ Things you may want to cover:
 |user_id|integer|null: false,  foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-######### Association
+### Association
 - belongs_to :user
 - belongs_to :group

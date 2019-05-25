@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20190525042200) do
 
+
   create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "group_id"
     t.integer  "user_id"
@@ -55,6 +56,8 @@ ActiveRecord::Schema.define(version: 20190525042200) do
 
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
+
 end

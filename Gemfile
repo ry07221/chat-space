@@ -66,6 +66,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
     gem 'factory_bot_rails'
     gem 'faker'
   end
+  gem 'rails-i18n'
+  
   
   
   

@@ -1,6 +1,7 @@
-.wrapper
-  = render 'shared/side_bar'
-
-.chat-group-form
-  %h1 チャットグループ編集
-  = render partial: 'form', locals: { group: @group }
+%head
+  %meta{ charset: "utf-8" }
+  = stylesheet_link_tag "application"
+%body
+  .wrapper
+    = render partial: "messages/sidebar", locals: {groups: @groups}
+    

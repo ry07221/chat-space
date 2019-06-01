@@ -1,9 +1,6 @@
 $(() => {
   function buildHTML(message) {
-    let image = ""
-    if (message.image.url) {
-      image = `<img src="${message.image.url}" class="message__image"></div>`;
-    }
+    let image = message.image.url ? `<img src="${message.image.url}" class="message__image"></div>` : ``
     const html = `<div class="message" message_id="${message.id}>
                   <h3 class="message__name">${message.user_name}</h3>
                   <p class="message__date">${message.created_at}</p>

@@ -65,3 +65,14 @@ $(() => {
     });
   };
 });
+
+$(function() {
+  $(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+      setInterval(update, 5000);
+    } else {
+      clearInterval();
+  }
+  })
+});
+});

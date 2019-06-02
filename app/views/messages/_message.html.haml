@@ -1,11 +1,13 @@
-.message
-  .upper-message
-    .upper-message__user-name
-      = message.user.name
-    .upper-message__date
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
-  .lower-meesage
+.chat-content{ "data-message-id": "#{message.id}"}
+  .chat-content__header
+    .chat-content__name
+      =message.user.name
+    .chat-content__time
+      = message.created_at.to_s(:default)
+  .chat-content__message
     - if message.content.present?
-      %p.lower-message__content
-        = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      = message.content
+      %br
+      %br
+    = image_tag message.image.url, class: 'chat-content__image' if message.image.present?
+    

@@ -13,6 +13,6 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'regon-x'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/regon-x
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/regon-x'
 end
 

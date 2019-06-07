@@ -2,9 +2,9 @@ $(function() {
   function buildHTML(message){
     var message_image = ''
     if (message.image){
-      message_image = '<image src = "${message.image}" class = "bottom__message__image">'
+      message_image = `<image src = "${message.image}" class = "bottom__message__image">`
     }
-    var html = <div class = "messages" date_message_id = "${message.id}}">
+    var html = `<div class =  messages date_message_id = ${message.id}}>
                  <div class = "messages__user__name">
                      "${message.name}}">
                  </div>
@@ -15,11 +15,10 @@ $(function() {
                       <p class ="messages-content">${message.text}</p>
                    ${addimage}
                  </div>
-               </div>
+                </div>` ;
                  
     return html ; 
   }
-//定義終了
                     
 
 $('#message_form').on('submit' , function(e){
@@ -48,4 +47,5 @@ $.ajax({
   alert('error');
 })
 })
-//非同期通信　終了
+})
+

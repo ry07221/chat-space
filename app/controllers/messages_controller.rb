@@ -6,18 +6,6 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html
-      format.json {
-        # latest_idより大きいidのメッセージを取得
-        @new_messages = Message.where(["id > ? and group_id = ?", params[:latest_id], @group.id])
-      }
-    end
-  end
-
-  def index
-    @message = Message.new
-    @messages = @group.messages.includes(:user)
-    respond_to do |format|
-      format.html
       format.json{ @new_messages = @messages.where('id > ?', params[:id]) }
     end
   end
@@ -26,13 +14,9 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to group_messages_path, notice: "メッセージを送信しました" }
+        format.html { redirect_to group_messages_path(@group)}
         format.json
       end
-    else
-      @messages = @group.messages.includes(:user)
-      flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
     end
   end
 

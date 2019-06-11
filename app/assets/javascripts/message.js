@@ -20,3 +20,4 @@ var buildMessageHTML = function(message) {
   };
   return html;
 };
+
